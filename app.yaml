@@ -11,11 +11,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-runtime: nodejs
-env: flex
+# [START gae_quickstart_yaml]
+runtime: nodejs10
+# [END gae_quickstart_yaml]
 
-beta_settings:
-  # Enable Google Cloud Endpoints API management.
-  use_endpoints_api_management: true
-  # Specify the Open API specification.
-  endpoints_swagger_spec_file: openapi.yaml
