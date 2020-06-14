@@ -2,7 +2,7 @@
 
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.createTable('enderecoUser', {
+    return queryInterface.createTable('numeroCnh', {
       id: {
         type : Sequelize.INTEGER,
         primaryKey : true,
@@ -13,38 +13,29 @@ module.exports = {
         type:Sequelize.INTEGER,
         allowNull:true,
       },
-      cep: {
-        type: Sequelize. STRING,
-        allowNull: true,
+      numero_cnh: {
+        type:Sequelize.NUMBER,
+        allowNull:true,
       },
-      endereco: {
-        type: Sequelize.STRING,
-        allowNull: true,
-      }, 
-      number: {
-        type: Sequelize.DECIMAL,
-        allowNull: true,
+      validade_cnh:{
+        type:Sequelize.DATE,
+        allowNull:true
       },
-      complem: {
-        type: Sequelize.STRING,
-        allowNull: true,
-      },
-      preexiste: {
-        type: Sequelize.STRING,
-        allowNull: true,
+      estado_emissão:{
+        type:Sequelize.DATE,
+        allowNull:true
       },
       created_at: {
         type: Sequelize.DATA,
         allowNull: false,
-      }, 
+      },
+       
       update_at: {
         type: Sequelize.DATE,
         allowNull: false,
       },
     }); 
       },
-
-  };
 
   down: (queryInterface, Sequelize) => {
     /*
@@ -54,5 +45,5 @@ module.exports = {
       Example:
       return queryInterface.dropTable('users');
     */
-  };
-
+  }
+};
