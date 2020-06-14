@@ -1,8 +1,5 @@
 'use strict';
 
-const sequelize = require("sequelize");
-const { SELECT } = require("sequelize/types/lib/query-types");
-
 module.exports = {
   up: (queryInterface, Sequelize) => {
 return queryInterface.createTable('user', {
@@ -19,9 +16,13 @@ return queryInterface.createTable('user', {
   email: {
     type: Sequelize.STRING,
     allowNull: false,
+  },
+  password : {
+    type: Sequelize.STRING,
+    allowNull: false,
   }, 
   created_at: {
-    type: Sequelize.DATA,
+    type: Sequelize.DATEs,
     allowNull: false,
   }, 
   update_at: {
@@ -32,12 +33,6 @@ return queryInterface.createTable('user', {
   },
 
   down: (queryInterface, Sequelize) => {
-    /*
-      Add reverting commands here.
-      Return a promise to correctly handle asynchronicity.
-
-      Example:
-      return queryInterface.dropTable('users');
-    */
+   return queryInterface.dropTable('users');
   }
 };
