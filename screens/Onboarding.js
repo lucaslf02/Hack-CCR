@@ -27,7 +27,7 @@ class Onboarding extends React.Component {
           />
         </Block>
         <Block center>
-          <Image source={Images.LogoOnboarding} style={styles.logo} />
+          <Image source={Images.Truli} style={styles.logo} />
         </Block>
         <Block flex space="between" style={styles.padded}>
             <Block flex space="around" style={{ zIndex: 2 }}>
@@ -55,7 +55,7 @@ class Onboarding extends React.Component {
                   onPress={() => navigation.navigate("App")}
                   textStyle={{ color: argonTheme.COLORS.BLACK }}
                 >
-                  Get Started
+                  Login
                 </Button>
               </Block>
           </Block>
@@ -83,7 +83,6 @@ const styles = StyleSheet.create({
   },
   logo: {
     width: 200,
-    height: 60,
     zIndex: 2,
     position: 'relative',
     marginTop: '-50%'

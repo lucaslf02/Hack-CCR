@@ -4,12 +4,14 @@ import {
   ImageBackground,
   Dimensions,
   StatusBar,
-  KeyboardAvoidingView
+  KeyboardAvoidingView,
+  Image
 } from "react-native";
 import { Block, Checkbox, Text, theme } from "galio-framework";
 
 import { Button, Icon, Input } from "../components";
 import { Images, argonTheme } from "../constants";
+
 
 const { width, height } = Dimensions.get("screen");
 
@@ -18,70 +20,22 @@ class Register extends React.Component {
     return (
       <Block flex middle>
         <StatusBar hidden />
-        <ImageBackground
-          source={Images.RegisterBackground}
-          style={{ width, height, zIndex: 1 }}
-        >
-          <Block flex middle>
-            <Block style={styles.registerContainer}>
-              <Block flex={0.25} middle style={styles.socialConnect}>
-                <Text color="#8898AA" size={12}>
-                  Sign up with
-                </Text>
+        
+              <Block flex={0.75} middle style={styles.logoConect}>
+                
+                <Block center>
+                  <Image source={Images.TruliTxt} />
+                </Block>
                 <Block row style={{ marginTop: theme.SIZES.BASE }}>
-                  <Button style={{ ...styles.socialButtons, marginRight: 30 }}>
-                    <Block row>
-                      <Icon
-                        name="logo-github"
-                        family="Ionicon"
-                        size={14}
-                        color={"black"}
-                        style={{ marginTop: 2, marginRight: 5 }}
-                      />
-                      <Text style={styles.socialTextButtons}>GITHUB</Text>
-                    </Block>
-                  </Button>
-                  <Button style={styles.socialButtons}>
-                    <Block row>
-                      <Icon
-                        name="logo-google"
-                        family="Ionicon"
-                        size={14}
-                        color={"black"}
-                        style={{ marginTop: 2, marginRight: 5 }}
-                      />
-                      <Text style={styles.socialTextButtons}>GOOGLE</Text>
-                    </Block>
-                  </Button>
                 </Block>
               </Block>
               <Block flex>
-                <Block flex={0.17} middle>
-                  <Text color="#8898AA" size={12}>
-                    Or sign up the classic way
-                  </Text>
-                </Block>
                 <Block flex center>
                   <KeyboardAvoidingView
                     style={{ flex: 1 }}
                     behavior="padding"
                     enabled
                   >
-                    <Block width={width * 0.8} style={{ marginBottom: 15 }}>
-                      <Input
-                        borderless
-                        placeholder="Name"
-                        iconContent={
-                          <Icon
-                            size={16}
-                            color={argonTheme.COLORS.ICON}
-                            name="hat-3"
-                            family="ArgonExtra"
-                            style={styles.inputIcons}
-                          />
-                        }
-                      />
-                    </Block>
                     <Block width={width * 0.8} style={{ marginBottom: 15 }}>
                       <Input
                         borderless
@@ -101,7 +55,7 @@ class Register extends React.Component {
                       <Input
                         password
                         borderless
-                        placeholder="Password"
+                        placeholder="Senha"
                         iconContent={
                           <Icon
                             size={16}
@@ -114,11 +68,11 @@ class Register extends React.Component {
                       />
                       <Block row style={styles.passwordCheck}>
                         <Text size={12} color={argonTheme.COLORS.MUTED}>
-                          password strength:
+                          Força da senha:
                         </Text>
                         <Text bold size={12} color={argonTheme.COLORS.SUCCESS}>
                           {" "}
-                          strong
+                          forte
                         </Text>
                       </Block>
                     </Block>
@@ -127,24 +81,24 @@ class Register extends React.Component {
                         checkboxStyle={{
                           borderWidth: 3
                         }}
-                        color={argonTheme.COLORS.PRIMARY}
-                        label="I agree with the"
+                        color={"#F5591F"}
+                        label="Eu aceito os "
                       />
                       <Button
                         style={{ width: 100 }}
                         color="transparent"
                         textStyle={{
-                          color: argonTheme.COLORS.PRIMARY,
+                          color: "#F5591F",
                           fontSize: 14
                         }}
                       >
-                        Privacy Policy
+                        Termos
                       </Button>
                     </Block>
                     <Block middle>
-                      <Button color="primary" style={styles.createButton}>
-                        <Text bold size={14} color={argonTheme.COLORS.WHITE}>
-                          CREATE ACCOUNT
+                      <Button color={"#F5591F"} style={styles.createButton}>
+                        <Text bold size={14} color={"#fff"}>
+                          Criar conta
                         </Text>
                       </Button>
                     </Block>
@@ -152,9 +106,6 @@ class Register extends React.Component {
                 </Block>
               </Block>
             </Block>
-          </Block>
-        </ImageBackground>
-      </Block>
     );
   }
 }
@@ -163,7 +114,7 @@ const styles = StyleSheet.create({
   registerContainer: {
     width: width * 0.9,
     height: height * 0.78,
-    backgroundColor: "#F4F5F7",
+    backgroundColor: "#F5591F",
     borderRadius: 4,
     shadowColor: argonTheme.COLORS.BLACK,
     shadowOffset: {
@@ -175,10 +126,13 @@ const styles = StyleSheet.create({
     elevation: 1,
     overflow: "hidden"
   },
-  socialConnect: {
-    backgroundColor: argonTheme.COLORS.WHITE,
+  logoConect: {
+    width: 500,
+    backgroundColor: "#F5591F",
     borderBottomWidth: StyleSheet.hairlineWidth,
-    borderColor: "#8898AA"
+    borderColor: "#F5591F",
+    borderBottomLeftRadius: 250,
+    marginBottom:40,
   },
   socialButtons: {
     width: 120,
@@ -194,7 +148,7 @@ const styles = StyleSheet.create({
     elevation: 1
   },
   socialTextButtons: {
-    color: argonTheme.COLORS.PRIMARY,
+    color: "#F5591F",
     fontWeight: "800",
     fontSize: 14
   },
@@ -207,8 +161,11 @@ const styles = StyleSheet.create({
     paddingBottom: 30
   },
   createButton: {
+    borderRadius: 30,
     width: width * 0.5,
-    marginTop: 25
+    marginTop: 25,
+    color: "#F5591F",
+    backgroundColor: "#F5591F",
   }
 });
 
