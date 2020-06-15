@@ -20,7 +20,6 @@ class Register extends React.Component {
     return (
       <Block flex middle>
         <StatusBar hidden />
-        
               <Block flex={0.75} middle style={styles.logoConect}>
                 
                 <Block center>

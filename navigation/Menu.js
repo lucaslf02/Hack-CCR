@@ -10,6 +10,7 @@ import { Block, Text, theme } from "galio-framework";
 import Images from "../constants/Images";
 import { DrawerItem as DrawerCustomItem } from '../components';
 
+
 function CustomDrawerContent({ drawerPosition, navigation, profile, focused, state, ...rest }) {
   const insets = useSafeArea();
   const screens = [
@@ -62,5 +63,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center'
   }
 });
+
+
 
 export default CustomDrawerContent;

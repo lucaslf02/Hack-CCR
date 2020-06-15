@@ -18,6 +18,8 @@ import Articles from "../screens/Articles";
 // drawer
 import CustomDrawerContent from "./Menu";
 
+import MyTabs from './Menu01'
+
 // header for screens
 import { Icon, Header } from "../components";
 import { argonTheme, tabs } from "../constants";
@@ -41,23 +43,6 @@ function ElementsStack(props) {
           cardStyle: { backgroundColor: "#F8F9FE" }
         }}
       />
-            <Stack.Screen
-        name="Pro"
-        component={Pro}
-        options={{
-          header: ({ navigation, scene }) => (
-            <Header
-              title=""
-              back
-              white
-              transparent
-              navigation={navigation}
-              scene={scene}
-            />
-          ),
-          headerTransparent: true
-        }}
-      />
     </Stack.Navigator>
   );
 }
@@ -73,23 +58,6 @@ function ArticlesStack(props) {
             <Header title="Articles" navigation={navigation} scene={scene} />
           ),
           cardStyle: { backgroundColor: "#F8F9FE" }
-        }}
-      />
-            <Stack.Screen
-        name="Pro"
-        component={Pro}
-        options={{
-          header: ({ navigation, scene }) => (
-            <Header
-              title=""
-              back
-              white
-              transparent
-              navigation={navigation}
-              scene={scene}
-            />
-          ),
-          headerTransparent: true
         }}
       />
     </Stack.Navigator>
@@ -116,23 +84,6 @@ function ProfileStack(props) {
           headerTransparent: true
         }}
       />
-            <Stack.Screen
-        name="Pro"
-        component={Pro}
-        options={{
-          header: ({ navigation, scene }) => (
-            <Header
-              title=""
-              back
-              white
-              transparent
-              navigation={navigation}
-              scene={scene}
-            />
-          ),
-          headerTransparent: true
-        }}
-      />
     </Stack.Navigator>
   );
 }
@@ -156,23 +107,6 @@ function HomeStack(props) {
           cardStyle: { backgroundColor: "#F8F9FE" }
         }}
       />
-      <Stack.Screen
-        name="Pro"
-        component={Pro}
-        options={{
-          header: ({ navigation, scene }) => (
-            <Header
-              title=""
-              back
-              white
-              transparent
-              navigation={navigation}
-              scene={scene}
-            />
-          ),
-          headerTransparent: true
-        }}
-      />
     </Stack.Navigator>
   );
 }
@@ -184,7 +118,7 @@ export default function OnboardingStack(props) {
         name="Onboarding"
         component={Onboarding}
         option={{
-          headerTransparent: true
+          headerTransparent: false
         }}
       />
       <Stack.Screen name="App" component={AppStack} />
@@ -194,9 +128,11 @@ export default function OnboardingStack(props) {
 
 function AppStack(props) {
   return (
+    
     <Drawer.Navigator
       style={{ flex: 1 }}
       drawerContent={props => <CustomDrawerContent {...props} />}
+      
       drawerStyle={{
         backgroundColor: "white",
         width: width * 0.8

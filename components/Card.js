@@ -1,7 +1,7 @@
 import React from 'react';
 import { withNavigation } from '@react-navigation/compat';
 import PropTypes from 'prop-types';
-import { StyleSheet, Dimensions, Image, TouchableWithoutFeedback } from 'react-native';
+import { StyleSheet, Dimensions, Image, TouchableWithoutFeedback, CheckBox } from 'react-native';
 import { Block, Text, theme } from 'galio-framework';
 
 import { argonTheme } from '../constants';
@@ -23,17 +23,15 @@ class Card extends React.Component {
 
     return (
       <Block row={horizontal} card flex style={cardContainer}>
-        <TouchableWithoutFeedback onPress={() => navigation.navigate('Pro')}>
-          <Block flex style={imgContainer}>
-            <Image source={{uri: item.image}} style={imageStyles} />
+          <Block style={styles.cardCheckBox}>
+            <CheckBox
+              checked={false}
+            />
           </Block>
-        </TouchableWithoutFeedback>
-        <TouchableWithoutFeedback onPress={() => navigation.navigate('Pro')}>
-          <Block flex space="between" style={styles.cardDescription}>
+          <Block  space="between" style={styles.cardDescription}>
             <Text size={14} style={styles.cardTitle}>{item.title}</Text>
-            <Text size={12} muted={!ctaColor} color={ctaColor || argonTheme.COLORS.ACTIVE} bold>{item.cta}</Text>
           </Block>
-        </TouchableWithoutFeedback>
+          
       </Block>
     );
   }
@@ -52,13 +50,17 @@ const styles = StyleSheet.create({
     backgroundColor: theme.COLORS.WHITE,
     marginVertical: theme.SIZES.BASE,
     borderWidth: 0,
-    minHeight: 114,
-    marginBottom: 16
+    minHeight: 10,
+    marginBottom: 2
   },
   cardTitle: {
     flex: 1,
     flexWrap: 'wrap',
     paddingBottom: 6
+  },
+  cardCheckBox:{
+    marginTop: 4,
+    marginLeft: 20
   },
   cardDescription: {
     padding: theme.SIZES.BASE / 2
@@ -84,7 +86,7 @@ const styles = StyleSheet.create({
     borderBottomLeftRadius: 0
   },
   fullImage: {
-    height: 215
+    height: 0
   },
   shadow: {
     shadowColor: theme.COLORS.BLACK,
