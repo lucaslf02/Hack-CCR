@@ -12,9 +12,12 @@ module.exports = {
       user_id: {
         type:Sequelize.INTEGER,
         allowNull:true,
+        // references: { model: 'users', key: 'id' },
+        // onUpdate: 'CASCADE',
+        // onDelete: 'CASCADE',
       },
       numero_cnh: {
-        type:Sequelize.NUMBER,
+        type:Sequelize.INTEGER,
         allowNull:true,
       },
       validade_cnh:{
@@ -26,7 +29,7 @@ module.exports = {
         allowNull:true
       },
       created_at: {
-        type: Sequelize.DATA,
+        type: Sequelize.DATE,
         allowNull: false,
       },
        

@@ -2,7 +2,7 @@
 
 module.exports = {
   up: (queryInterface, Sequelize) => {
-return queryInterface.createTable('user', {
+return queryInterface.createTable('users', {
   id: {
     type : Sequelize.INTEGER,
     primaryKey : true,
@@ -22,10 +22,10 @@ return queryInterface.createTable('user', {
     allowNull: false,
   }, 
   created_at: {
-    type: Sequelize.DATEs,
+    type: Sequelize.DATE,
     allowNull: false,
   }, 
-  update_at: {
+  updated_at: {
     type: Sequelize.DATE,
     allowNull: false,
   },

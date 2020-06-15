@@ -8,13 +8,20 @@ module.exports = {
         primaryKey : true,
         autoIncrement: true, 
         allowNull: false,
+      },
+      user_id: {
+        type:Sequelize.INTEGER,
+        allowNull:true,
+        // references: { model: 'users', key: 'id' },
+        // onUpdate: 'CASCADE',
+        // onDelete: 'CASCADE',
       }, 
       idade: {
-        type: Sequelize.MUMBER,
+        type: Sequelize.INTEGER,
         allowNull: true,
       },
       peso: {
-        type: Sequelize.DECIMAL,
+        type: Sequelize.INTEGER,
         allowNull: true,
       }, 
       altura: {
@@ -34,7 +41,7 @@ module.exports = {
         allowNull: true,
       },
       created_at: {
-        type: Sequelize.DATA,
+        type: Sequelize.DATE,
         allowNull: false,
       }, 
       update_at: {

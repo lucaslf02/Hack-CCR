@@ -12,6 +12,9 @@ module.exports = {
       user_id: {
         type:Sequelize.INTEGER,
         allowNull:true,
+        // references: { model: 'users', key: 'id' },
+        // onUpdate: 'CASCADE',
+        // onDelete: 'CASCADE',
       },
       cep: {
         type: Sequelize. STRING,
@@ -34,7 +37,7 @@ module.exports = {
         allowNull: true,
       },
       created_at: {
-        type: Sequelize.DATA,
+        type: Sequelize.DATE,
         allowNull: false,
       }, 
       update_at: {
