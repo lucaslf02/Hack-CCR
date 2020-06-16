@@ -13,6 +13,7 @@ import { Button, Icon, Input } from "../components";
 import { Images, argonTheme } from "../constants";
 import { ScreenStackHeaderRightView } from "react-native-screens";
 
+import Home from "./Home"
 
 const { width, height } = Dimensions.get("screen");
 
@@ -76,7 +77,7 @@ class Onboarding extends React.Component {
                     </Block>
                    
                     <Block middle>
-                      <Button color={"#F5591F"} style={styles.createButton} onPress={() => navigation.navigate("App")}>
+                      <Button color={"#F5591F"} style={styles.createButton} onPress={() => navigation.navigate("Home")}>
                         <Text bold size={14} color={"#fff"}>
                           ENTRAR
                         </Text>

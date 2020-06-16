@@ -10,6 +10,18 @@ const iOSLogo = require("../assets/imgs/ios.png");
 const androidLogo = require("../assets/imgs/android.png");
 const Truli = require("../assets/imgs/logo.png");
 const TruliTxt = require("../assets/imgs/logoTxt.png");
+const logoBermen = require("../assets/imgs/logoBermen.png");
+const logoBR = require("../assets/imgs/logoBR.png");
+const logoIpiranga = require("../assets/imgs/logoIpiranga.png");
+const logoShell = require("../assets/imgs/logoShell.png");
+
+
+const lojas = [
+  logoShell,
+  logoIpiranga,
+  logoBermen,
+  logoBR
+]
 
 
 // internet imgs
@@ -37,11 +49,16 @@ export default {
   ProfilePicture,
   RegisterBackground,
   Viewed,
+  lojas,
   Products,
   Pro,
   ArgonLogo,
   iOSLogo,
   androidLogo,
   Truli,
-  TruliTxt
+  TruliTxt,
+  logoBermen,
+  logoBR,
+  logoIpiranga,
+  logoShell
 };

@@ -13,6 +13,9 @@ import { Block, Text, theme } from "galio-framework";
 import { articles, Images, argonTheme } from "../constants/";
 import { Card } from "../components/";
 
+
+
+
 const { width } = Dimensions.get("screen");
 
 const thumbMeasure = (width - 48 - 32) / 3;
@@ -95,6 +98,7 @@ class Articles extends React.Component {
               <Card item={articles[2]} />
             </Block>
             <Card item={articles[4]} full />
+
             <Block flex card shadow style={styles.category}>
               <ImageBackground
                 source={{ uri: Images.Products["View article"] }}
@@ -115,6 +119,7 @@ class Articles extends React.Component {
               </ImageBackground>
             </Block>
           </Block>
+
           <Block flex style={{ marginTop: theme.SIZES.BASE / 2 }}>
             <ScrollView
               horizontal={true}
@@ -147,30 +152,19 @@ class Articles extends React.Component {
         flex
         style={[styles.group, { paddingBottom: theme.SIZES.BASE * 5 }]}
       >
-        <Text bold size={16} style={styles.title}>
-          Album
-        </Text>
         <Block style={{ marginHorizontal: theme.SIZES.BASE * 2 }}>
-          <Block flex right>
-            <Text
-              size={12}
-              color={theme.COLORS.PRIMARY}
-              onPress={() => navigation.navigate("Home")}
-            >
-              View All
-            </Text>
-          </Block>
           <Block
             row
             space="between"
             style={{ marginTop: theme.SIZES.BASE, flexWrap: "wrap" }}
           >
-            {Images.Viewed.map((img, index) => (
-              <Block key={`viewed-${img}`} style={styles.shadow}>
+            {Images.lojas.map((img, index) => (
+              <Block key={`lojas-${img}`} style={styles.shadow} onPress={() => navigation.navigate("Home")}>
+              
                 <Image
                   resizeMode="cover"
-                  source={{ uri: img }}
-                  style={styles.albumThumb}
+                  source={img}
+                  style={styles.logoLoja}
                 />
               </Block>
             ))}
@@ -187,6 +181,7 @@ class Articles extends React.Component {
           showsVerticalScrollIndicator={false}
         >
           {this.renderCards()}
+
           {this.renderAlbum()}
         </ScrollView>
       </Block>
@@ -204,12 +199,13 @@ const styles = StyleSheet.create({
   group: {
     paddingTop: theme.SIZES.BASE
   },
-  albumThumb: {
+  logoLoja: {
     borderRadius: 4,
-    marginVertical: 4,
+    marginVertical: 10,
     alignSelf: "center",
-    width: thumbMeasure,
-    height: thumbMeasure
+    backgroundColor: "#F5891F",
+    width: 150,
+    height: 150
   },
   category: {
     backgroundColor: theme.COLORS.WHITE,

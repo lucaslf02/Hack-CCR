@@ -25,6 +25,9 @@
     "ios": {
       "supportsTablet": true
     },
+    "android":{
+      "package": "com.Truli.Truli"
+    },
     "description": "Truli test"
   }
 }
